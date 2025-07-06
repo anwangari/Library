@@ -4,8 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">My Library</div>
+            <button id="newBookBtn">New Book</button>
+        </div>
+        <div class="left-bar">
+            <h3>Categories</h3>
+            <p>Fiction</p>
+            <p>Non-Fiction</p>
+            <p>Science</p>
+            <p>History</p>
+        </div>
+        <div class="main">
+            <h2>My Books</h2>
+            <div class="books-container" id="booksContainer">
+                <div class="no-books">No books added yet. Click "New Book" to get started!</div>
+            </div>
+        </div>
+        <div class="right-bar">
+            <h3>Statistics</h3>
+            <p>Total Books: <span id="totalBooks">0</span></p>
+            <p>Books Read: <span id="booksRead">0</span></p>
+            <p>Books Remaining: <span id="booksRemaining">0</span></p>
+        </div>
+        <div class="footer">
+            <p>Copyright @ Tony Njuguna 2025</p>
+        </div>
+    </div>
+    
+    <!-- Modal fo Submitting a New Book Form -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Book</h2>
+            <form id="bookForm">
+                <div class="form-group">
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" id="bookTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" id="bookAuthor" name="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookPages">Pages:</label>
+                    <input type="number" id="bookPages" name="pages" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookRead">Have you read this book?</label>
+                    <select id="bookRead" name="read" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">Add Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="books.js"></script>
 </body>
 </html>
